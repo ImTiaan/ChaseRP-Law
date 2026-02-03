@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { Analytics } from "@vercel/analytics/react";
 import { Search, Menu, X, BookOpen, Scale, Shield, Radio, Gavel, FileText, Home, Briefcase } from 'lucide-react';
 import Markdown from 'react-markdown';
 import Fuse from 'fuse.js';
@@ -288,6 +289,7 @@ function App() {
 
   return (
     <div className="flex h-screen w-full bg-[#050a08] text-white overflow-hidden font-sans">
+      <Analytics />
       
       {/* Mobile Sidebar Overlay */}
       <div 
