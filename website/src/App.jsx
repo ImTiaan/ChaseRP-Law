@@ -97,6 +97,9 @@ const processSearchScope = (data) => {
   });
 };
 
+// IDs that should use the full width layout
+const WIDE_VIEW_IDS = ['Penal_code', 'Case_Laws', 'Notices', 'Legal_Definitions', 'Court_Procedures'];
+
 function App() {
   const [activeId, setActiveId] = useState('home');
   const [searchQuery, setSearchQuery] = useState('');
@@ -408,7 +411,7 @@ function App() {
 
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-8 scroll-smooth">
-          <div className="max-w-4xl mx-auto min-h-full">
+          <div className={`${WIDE_VIEW_IDS.includes(activeId) ? 'max-w-[95%] xl:max-w-7xl' : 'max-w-4xl'} mx-auto min-h-full`}>
             
             {/* Home View */}
             {activeId === 'home' ? (

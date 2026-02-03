@@ -29,7 +29,7 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
   }, [activeSection]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-4">
       {items.map((item, idx) => {
         const cleanId = item.title.replace(/[*_`]/g, '');
         const isActive = cleanId === activeSection;
@@ -43,11 +43,11 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
                 : 'border-orange-500/30 hover:border-orange-500/50'
             }`}
           >
-            <div className="flex justify-between items-start mb-3">
-              <h3 className="text-lg font-bold text-white leading-tight pr-2">{item.title}</h3>
-              <div className="flex flex-col items-end gap-1">
+            <div className="flex justify-between items-start mb-3 gap-2">
+              <h3 className="text-lg font-bold text-white leading-tight flex-1 min-w-0 break-words">{item.title}</h3>
+              <div className="flex flex-col items-end gap-1 flex-shrink-0">
                 {item.code && (
-                  <span className="border border-orange-500 text-orange-500 text-xs font-mono px-1.5 py-0.5 rounded">
+                  <span className="border border-orange-500 text-orange-500 text-xs font-mono px-1.5 py-0.5 rounded whitespace-nowrap">
                     {item.code}
                   </span>
                 )}
