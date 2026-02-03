@@ -1,6 +1,8 @@
 
 import React, { useEffect } from 'react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { Banknote, Hourglass, Scale, Calendar, User } from 'lucide-react';
 
 const TypeBadge = ({ type }) => {
@@ -56,7 +58,7 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
             </div>
             
             <div className="text-gray-400 text-sm mb-4 flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-2">
-              <Markdown>{item.description}</Markdown>
+              <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.description}</Markdown>
             </div>
 
             <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5 flex-shrink-0 mt-auto">
@@ -108,7 +110,7 @@ export const CaseLawsGrid = ({ items, activeSection }) => {
               <div className="text-gray-500 text-sm mb-4">Defined on {item.date}</div>
             )}
             <div className="text-gray-300">
-              <Markdown>{item.body}</Markdown>
+              <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.body}</Markdown>
             </div>
           </div>
         );
@@ -132,7 +134,7 @@ export const NoticesGrid = ({ items }) => {
             )}
           </div>
           <div className="prose prose-invert prose-emerald max-w-none text-gray-300">
-             <Markdown>{item.body}</Markdown>
+             <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.body}</Markdown>
           </div>
         </div>
       ))}
@@ -169,7 +171,7 @@ export const LegalDefinitionsGrid = ({ items, activeSection }) => {
           >
             <h3 className="text-xl font-bold text-emerald-400 mb-2">{item.title}</h3>
             <div className="prose prose-invert prose-emerald max-w-none text-gray-300 text-sm">
-              <Markdown>{item.body}</Markdown>
+              <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.body}</Markdown>
             </div>
           </div>
         );

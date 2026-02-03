@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
 import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { 
   parsePenalCode, 
   parseCaseLaws, 
@@ -88,6 +90,7 @@ export default function DocViewer({ content, activeSection, matchingTitles }) {
         </div>
       </div>
       <Markdown
+        remarkPlugins={[remarkGfm, remarkBreaks]}
         components={{
           h1: ({node, ...props}) => <h1 className="text-2xl font-bold text-white mt-8 mb-4 border-l-4 border-emerald-500 pl-4" {...props} />,
           h2: ({node, ...props}) => <h2 className="text-xl font-bold text-white mt-6 mb-3 flex items-center gap-2" {...props} />,
