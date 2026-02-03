@@ -104,3 +104,38 @@ export const parseLegalDefinitions = (content) => {
     };
   }).filter(item => item);
 };
+
+export const parseUSConstitution = (content) => {
+  const parts = content.split('---');
+  const mainText = parts[0].trim();
+  
+  // If no amendments part, return just mainText
+  if (parts.length < 2) {
+    return { mainText, amendments: [] };
+  }
+
+  const amendmentsSection = parts.slice(1).join('---');
+  // Split by ## header for each amendment
+  const amendmentBlocks = amendmentsSection.split(/^##\s+/m).filter(s => s.trim());
+
+  const amendments = amendmentBlocks.map(block => {
+    const lines = block.trim().split('\n');
+    const title = lines[0].trim(); // First line is title because we split by ##
+    const body = lines.slice(1).join('\n').trim();
+
+    const originalTextMatch = body.match(/- \*\*Original Text:\*\*\s+([\s\S]+?)(?=\n- \*\*|$)/);
+    const meaningMatch = body.match(/- \*\*Meaning:\*\*\s+([\s\S]+?)(?=\n- \*\*|$)/);
+
+    return {
+      title,
+      originalText: originalTextMatch ? originalTextMatch[1].trim() : '',
+      meaning: meaningMatch ? meaningMatch[1].trim() : '',
+      raw: block
+    };
+  }).filter(item => item.title && (item.originalText || item.meaning));
+
+  return {
+    mainText,
+    amendments
+  };
+};

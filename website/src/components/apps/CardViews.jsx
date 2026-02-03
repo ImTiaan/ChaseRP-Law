@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
-import { Banknote, Hourglass, Scale, Calendar, User } from 'lucide-react';
+import { Banknote, Hourglass, Scale, Calendar, User, Book } from 'lucide-react';
 
 const TypeBadge = ({ type }) => {
   let colorClass = 'bg-gray-600';
@@ -176,6 +176,67 @@ export const LegalDefinitionsGrid = ({ items, activeSection }) => {
           </div>
         );
       })}
+    </div>
+  );
+};
+
+export const USConstitutionGrid = ({ items, mainText, activeSection }) => {
+  useEffect(() => {
+    if (activeSection) {
+      const element = document.getElementById(activeSection);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [activeSection]);
+
+  return (
+    <div className="space-y-8">
+      {mainText && (
+        <div className="prose prose-invert prose-emerald max-w-none p-4 bg-zinc-900/50 rounded-lg border border-white/10">
+          <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{mainText}</Markdown>
+        </div>
+      )}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+        {items.map((item, idx) => {
+          const cleanId = item.title.replace(/[*_`]/g, '');
+          const isActive = cleanId === activeSection;
+          return (
+            <div 
+              key={idx} 
+              id={cleanId}
+              className={`bg-zinc-900/80 border rounded-lg p-6 shadow-lg transition-all duration-300 flex flex-col ${
+                isActive 
+                  ? 'border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)] scale-[1.02] z-10' 
+                  : 'border-blue-500/30 hover:border-blue-500/50'
+              }`}
+            >
+              <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-2">
+                <Book className="text-blue-400" size={20} />
+                <h3 className="text-xl font-bold text-white">{item.title}</h3>
+              </div>
+              
+              <div className="space-y-4 flex-grow">
+                <div>
+                  <h4 className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-1">Original Text</h4>
+                  <div className="text-gray-300 text-sm italic bg-black/20 p-2 rounded border border-white/5">
+                    <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.originalText}</Markdown>
+                  </div>
+                </div>
+                
+                <div>
+                  <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">Meaning</h4>
+                  <div className="text-gray-300 text-sm">
+                    <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.meaning}</Markdown>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

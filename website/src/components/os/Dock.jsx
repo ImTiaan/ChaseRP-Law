@@ -11,7 +11,8 @@ import {
 
 const apps = [
   { id: "search", label: "Search", icon: Search },
-  { id: "Constitution", label: "Constitution", icon: Book },
+  { id: "Constitution", label: "SA Constitution", icon: Book },
+  { id: "US_Constitution", label: "US Constitution", icon: Book },
   { id: "Penal_code", label: "Penal Code", icon: Shield },
   { id: "Case_Laws", label: "Case Laws", icon: Scale },
   { id: "Legal_Definitions", label: "Definitions", icon: Gavel },

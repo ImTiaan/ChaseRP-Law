@@ -11,6 +11,7 @@ const icons = {
   'home': Home,
   'Case_Laws': Scale,
   'Constitution': BookOpen,
+  'US_Constitution': BookOpen,
   'Legal_Definitions': Gavel,
   'Notices': FileText,
   'Penal_code': Shield,
@@ -20,11 +21,12 @@ const icons = {
 };
 
 // Explicit order for Home Page Buttons
-const homeButtonsOrder = ['Constitution', 'Penal_code', 'Case_Laws', 'Legal_Definitions'];
+const homeButtonsOrder = ['Constitution', 'US_Constitution', 'Penal_code', 'Case_Laws', 'Legal_Definitions'];
 
 // Explicit order for Sidebar
 const sidebarOrder = [
   'Constitution',
+  'US_Constitution',
   'Penal_code',
   'Case_Laws',
   'Legal_Definitions',
@@ -35,7 +37,7 @@ const sidebarOrder = [
 ];
 
 // IDs of documents that should be split into individual sections for search
-const SPLITTABLE_IDS = ['Penal_code', 'Case_Laws', 'Legal_Definitions', 'Notices', 'Court_Procedures'];
+const SPLITTABLE_IDS = ['Penal_code', 'Case_Laws', 'Legal_Definitions', 'Notices', 'Court_Procedures', 'US_Constitution'];
 
 // Helper to split content into sections
 const processSearchScope = (data) => {
@@ -98,7 +100,7 @@ const processSearchScope = (data) => {
 };
 
 // IDs that should use the full width layout
-const WIDE_VIEW_IDS = ['Penal_code', 'Case_Laws', 'Notices', 'Legal_Definitions', 'Court_Procedures'];
+const WIDE_VIEW_IDS = ['Penal_code', 'Case_Laws', 'Notices', 'Legal_Definitions', 'Court_Procedures', 'US_Constitution'];
 
 function App() {
   const [activeId, setActiveId] = useState('home');
@@ -234,6 +236,8 @@ function App() {
   // Helper to get display title (handling overrides like "Notices" -> "Statutes and Notices")
   const getDisplayTitle = (item) => {
     if (item.id === 'Notices') return 'Statutes and Notices';
+    if (item.id === 'Constitution') return 'SA Constitution';
+    if (item.id === 'US_Constitution') return 'US Constitution';
     return item.title;
   };
 
