@@ -287,6 +287,15 @@ All individuals partaking in the racketeering activity, or having clear knowledg
 
 This statute requires multiple acts of racketeering activity committed to be proven. The acts together must show at least one of the following:
 
+1. The acts must have been committed over a long period of time.
+2. The enterprise exists for criminal purposes.
+3. The acts are a regular way of conducting the defendant's ongoing business.
+4. The acts are a regular way of conducting or participating in any ongoing enterprise.
+
+### Section 4 – Penalties
+
+Each act will be considered for the time and fine imposed, which at minimum shall be 1 year and $100,000 dollars. A RICO charge on a business or individuals may cause the enterprise affected to be dissolved and seized.
+
 **Author:** Theodore Lars
 
 ---
@@ -585,27 +594,6 @@ Under the Office of the Supreme Court, Bailiffs shall be hired to maintain and p
 This Office of the Supreme Court is responsible for ensuring individuals have their right to a lawyer met, and lawyers are paid for work where they provide defense for individuals in cases. Individual lawyers are free to simultaneously provide both public and private criminal defense services, and provide civil litigation services. All criminal defense lawyers are independent of state agency's beyond the mandatory BAR. The Judiciary of San Andreas determines the payment rate based on case for state appointed attorneys.
 
 State appointed attorneys are provided if available. Defendants refusal to accept a state appointed attorney may result in extended delays for trial.
-
-**Author:** Theodore Lars
-
----
-
-## STATUTE – Racketeer Influenced and Corrupt Organizations Act (RICO)
-
-**THE R.I.C.O. ACT – 01/01/2026**
-
-### Section 3 – Obtaining a Conviction (continued)
-
-The statute requires multiple acts of racketeering activity committed to be proven. The acts together must show at least one of the following:
-
-1. The acts must have been committed over a long period of time.
-2. The enterprise exists for criminal purposes.
-3. The acts are a regular way of conducting the defendant's ongoing business.
-4. The acts are a regular way of conducting or participating in any ongoing enterprise.
-
-### Section 4 – Penalties
-
-Each act will be considered for the time and fine imposed, which at minimum shall be 1 year and $100,000 dollars. A RICO charge on a business or individuals may cause the enterprise affected to be dissolved and seized.
 
 **Author:** Theodore Lars
 
