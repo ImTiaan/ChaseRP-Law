@@ -104,7 +104,70 @@ The Ratification of the Conventions of nine States, shall be sufficient for the 
 - **Original Text:** The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.
 - **Meaning:** Reserves powers not delegated to the federal government to the states or the people.
 
+## Amendment XI
+- **Original Text:** The Judicial power of the United States shall not be construed to extend to any suit in law or equity, commenced or prosecuted against one of the United States by Citizens of another State, or by Citizens or Subjects of any Foreign State.
+- **Meaning:** Prevents federal courts from hearing lawsuits against states by citizens of other states or foreign countries.
+
+## Amendment XII
+- **Original Text:** The Electors shall meet in their respective states and vote by ballot for President and Vice-President... they shall name in their ballots the person voted for as President, and in distinct ballots the person voted for as Vice-President.
+- **Meaning:** Modifies the procedure for electing the President and Vice President (Electoral College).
+
+## Amendment XIII
+- **Original Text:** Neither slavery nor involuntary servitude, except as a punishment for crime whereof the party shall have been duly convicted, shall exist within the United States, or any place subject to their jurisdiction.
+- **Meaning:** Abolishes slavery and involuntary servitude, except as punishment for a crime.
+
 ## Amendment XIV
 - **Original Text:** All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.
 - **Meaning:** Defines citizenship, contains the Privileges or Immunities Clause, the Due Process Clause, and the Equal Protection Clause.
 
+## Amendment XV
+- **Original Text:** The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of race, color, or previous condition of servitude.
+- **Meaning:** Prohibits the denial of the right to vote based on race, color, or previous condition of servitude.
+
+## Amendment XVI
+- **Original Text:** The Congress shall have power to lay and collect taxes on incomes, from whatever source derived, without apportionment among the several States, and without regard to any census or enumeration.
+- **Meaning:** Allows the federal government to collect income tax.
+
+## Amendment XVII
+- **Original Text:** The Senate of the United States shall be composed of two Senators from each State, elected by the people thereof, for six years; and each Senator shall have one vote.
+- **Meaning:** Establishes the direct election of U.S. Senators by popular vote.
+
+## Amendment XVIII
+- **Original Text:** After one year from the ratification of this article the manufacture, sale, or transportation of intoxicating liquors within, the importation thereof into, or the exportation thereof from the United States and all territory subject to the jurisdiction thereof for beverage purposes is hereby prohibited.
+- **Meaning:** Established Prohibition (banned the manufacture, sale, and transport of alcohol). Repealed by Amendment XXI.
+
+## Amendment XIX
+- **Original Text:** The right of citizens of the United States to vote shall not be denied or abridged by the United States or by any State on account of sex.
+- **Meaning:** Grants women the right to vote.
+
+## Amendment XX
+- **Original Text:** The terms of the President and Vice President shall end at noon on the 20th day of January, and the terms of Senators and Representatives at noon on the 3d day of January, of the years in which such terms would have ended if this article had not been ratified; and the terms of their successors shall then begin.
+- **Meaning:** Changes the dates of presidential and congressional terms (Lame Duck Amendment).
+
+## Amendment XXI
+- **Original Text:** The eighteenth article of amendment to the Constitution of the United States is hereby repealed.
+- **Meaning:** Repeals Amendment XVIII (ends Prohibition).
+
+## Amendment XXII
+- **Original Text:** No person shall be elected to the office of the President more than twice, and no person who has held the office of President, or acted as President, for more than two years of a term to which some other person was elected President shall be elected to the office of the President more than once.
+- **Meaning:** Limits the President to two terms in office.
+
+## Amendment XXIII
+- **Original Text:** The District constituting the seat of Government of the United States shall appoint in such manner as the Congress may direct: A number of electors of President and Vice President equal to the whole number of Senators and Representatives in Congress to which the District would be entitled if it were a State.
+- **Meaning:** Grants residents of Washington D.C. the right to vote for President and Vice President (Electoral College representation).
+
+## Amendment XXIV
+- **Original Text:** The right of citizens of the United States to vote in any primary or other election for President or Vice President, for electors for President or Vice President, or for Senator or Representative in Congress, shall not be denied or abridged by the United States or any State by reason of failure to pay any poll tax or other tax.
+- **Meaning:** Prohibits poll taxes in federal elections.
+
+## Amendment XXV
+- **Original Text:** In case of the removal of the President from office or of his death or resignation, the Vice President shall become President... Whenever there is a vacancy in the office of the Vice President, the President shall nominate a Vice President who shall take office upon confirmation by a majority vote of both Houses of Congress.
+- **Meaning:** Establishes procedures for presidential succession and filling a vacancy in the office of the Vice President.
+
+## Amendment XXVI
+- **Original Text:** The right of citizens of the United States, who are eighteen years of age or older, to vote shall not be denied or abridged by the United States or by any State on account of age.
+- **Meaning:** Lowers the voting age to 18.
+
+## Amendment XXVII
+- **Original Text:** No law, varying the compensation for the services of the Senators and Representatives, shall take effect, until an election of Representatives shall have intervened.
+- **Meaning:** Delays laws affecting Congressional salary from taking effect until after the next election of Representatives.
