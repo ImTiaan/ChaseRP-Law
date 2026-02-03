@@ -29,7 +29,7 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
   }, [activeSection]);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 p-4">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-4">
       {items.map((item, idx) => {
         const cleanId = item.title.replace(/[*_`]/g, '');
         const isActive = cleanId === activeSection;
@@ -37,17 +37,17 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
           <div 
             key={idx} 
             id={cleanId}
-            className={`bg-zinc-900/80 border rounded-lg p-4 flex flex-col h-full shadow-lg transition-all duration-300 ${
+            className={`bg-zinc-900/80 border rounded-lg p-5 flex flex-col h-[500px] shadow-lg transition-all duration-300 ${
               isActive 
-                ? 'border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)] scale-[1.02]' 
+                ? 'border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)] scale-[1.02] z-10' 
                 : 'border-orange-500/30 hover:border-orange-500/50'
             }`}
           >
-            <div className="flex justify-between items-start mb-3 gap-2">
-              <h3 className="text-lg font-bold text-white leading-tight flex-1 min-w-0 break-words">{item.title}</h3>
-              <div className="flex flex-col items-end gap-1 flex-shrink-0">
+            <div className="flex justify-between items-start mb-4 gap-3 flex-shrink-0">
+              <h3 className="text-xl font-bold text-white leading-tight flex-1 min-w-0 break-words">{item.title}</h3>
+              <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
                 {item.code && (
-                  <span className="border border-orange-500 text-orange-500 text-xs font-mono px-1.5 py-0.5 rounded whitespace-nowrap">
+                  <span className="border border-orange-500 text-orange-500 text-xs font-mono px-2 py-0.5 rounded whitespace-nowrap bg-orange-500/10">
                     {item.code}
                   </span>
                 )}
@@ -55,17 +55,17 @@ export const PenalCodeGrid = ({ items, activeSection }) => {
               </div>
             </div>
             
-            <div className="text-gray-400 text-sm mb-4 flex-grow">
-              {item.description}
+            <div className="text-gray-400 text-sm mb-4 flex-grow overflow-y-auto pr-2 custom-scrollbar space-y-2">
+              <Markdown>{item.description}</Markdown>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 mt-auto pt-3 border-t border-white/5">
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-white/5 flex-shrink-0 mt-auto">
               <div className="flex items-center gap-2 text-orange-400">
-                <Banknote size={16} />
+                <Banknote size={18} />
                 <span className="font-mono font-bold text-sm">{item.fine || 'None'}</span>
               </div>
               <div className="flex items-center gap-2 text-orange-400 justify-end">
-                <Hourglass size={16} />
+                <Hourglass size={18} />
                 <span className="font-mono font-bold text-sm">{item.sentence || 'None'}</span>
               </div>
             </div>
