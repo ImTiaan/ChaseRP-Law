@@ -16,7 +16,8 @@ const filesToProcess = [
   'Notices.md',
   'Penal_code.md',
   'Radio_Codes.md',
-  'Use_of_Force.md'
+  'Use_of_Force.md',
+  'Court_Procedures.md'
 ];
 
 function processFiles() {

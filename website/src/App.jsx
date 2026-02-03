@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Search, Menu, X, BookOpen, Scale, Shield, Radio, Gavel, FileText, Home } from 'lucide-react';
+import { Search, Menu, X, BookOpen, Scale, Shield, Radio, Gavel, FileText, Home, Briefcase } from 'lucide-react';
 import Markdown from 'react-markdown';
 import Fuse from 'fuse.js';
 import DocViewer from './components/apps/DocViewer';
@@ -15,6 +15,7 @@ const icons = {
   'Penal_code': Shield,
   'Radio_Codes': Radio,
   'Use_of_Force': Shield,
+  'Court_Procedures': Briefcase,
 };
 
 // Explicit order for Home Page Buttons
@@ -26,13 +27,14 @@ const sidebarOrder = [
   'Penal_code',
   'Case_Laws',
   'Legal_Definitions',
+  'Court_Procedures',
   'Notices',
   'Radio_Codes',
   'Use_of_Force'
 ];
 
 // IDs of documents that should be split into individual sections for search
-const SPLITTABLE_IDS = ['Penal_code', 'Case_Laws', 'Legal_Definitions', 'Notices'];
+const SPLITTABLE_IDS = ['Penal_code', 'Case_Laws', 'Legal_Definitions', 'Notices', 'Court_Procedures'];
 
 // Helper to split content into sections
 const processSearchScope = (data) => {

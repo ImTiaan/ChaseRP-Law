@@ -33,6 +33,9 @@ export default function DocViewer({ content, activeSection, matchingTitles }) {
       case 'Legal_Definitions':
         items = parseLegalDefinitions(content.content);
         break;
+      case 'Court_Procedures':
+        items = parseLegalDefinitions(content.content);
+        break;
       default:
         return null;
     }
@@ -54,6 +57,8 @@ export default function DocViewer({ content, activeSection, matchingTitles }) {
       case 'Notices':
         return <NoticesGrid items={items} activeSection={activeSection} />;
       case 'Legal_Definitions':
+        return <LegalDefinitionsGrid items={items} activeSection={activeSection} />;
+      case 'Court_Procedures':
         return <LegalDefinitionsGrid items={items} activeSection={activeSection} />;
       default:
         return null;
