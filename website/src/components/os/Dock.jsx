@@ -6,7 +6,8 @@ import {
   Gavel, 
   Scale, 
   FileText,
-  Shield
+  Shield,
+  Clipboard
 } from "lucide-react";
 
 const apps = [
@@ -16,6 +17,7 @@ const apps = [
   { id: "Penal_code", label: "Penal Code", icon: Shield },
   { id: "Case_Laws", label: "Case Laws", icon: Scale },
   { id: "Legal_Definitions", label: "Definitions", icon: Gavel },
+  { id: "templates", label: "Templates", icon: Clipboard },
 ];
 
 export default function Dock({ onOpenApp, activeApps }) {

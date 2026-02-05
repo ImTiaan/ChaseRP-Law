@@ -139,3 +139,35 @@ export const parseUSConstitution = (content) => {
     amendments
   };
 };
+
+export const parseTemplates = (content) => {
+  // Remove H1 title and description if present at start
+  // We assume the first ## starts the first template
+  const parts = content.split(/^##\s+/m);
+  
+  // parts[0] is the preamble/main title which we can ignore for the list
+  // parts[1...] are the templates
+  
+  const templateSections = parts.slice(1).filter(s => s.trim());
+
+  return templateSections.map(section => {
+    const lines = section.trim().split('\n');
+    const title = lines[0].trim();
+    const body = lines.slice(1).join('\n').trim();
+    
+    // Extract code block content for the template
+    const codeBlockMatch = body.match(/```text\s*([\s\S]+?)\s*```/);
+    const templateCode = codeBlockMatch ? codeBlockMatch[1].trim() : '';
+    
+    // Instructions are everything before the code block (removing the code block part)
+    // We can use a regex to replace the code block with empty string to get instructions
+    const instructions = body.replace(/```text[\s\S]+?```/, '').trim();
+
+    return {
+      title,
+      instructions,
+      templateCode,
+      raw: section
+    };
+  }).filter(item => item.title && item.templateCode);
+};

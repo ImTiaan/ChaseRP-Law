@@ -599,6 +599,27 @@ State appointed attorneys are provided if available. Defendants refusal to accep
 
 ---
 
+## STATUTE – Racketeer Influenced and Corrupt Organizations Act (RICO)
+
+**THE R.I.C.O. ACT – 01/01/2026**
+
+### Section 3 – Obtaining a Conviction (continued)
+
+The statute requires multiple acts of racketeering activity committed to be proven. The acts together must show at least one of the following:
+
+1. The acts must have been committed over a long period of time.
+2. The enterprise exists for criminal purposes.
+3. The acts are a regular way of conducting the defendant's ongoing business.
+4. The acts are a regular way of conducting or participating in any ongoing enterprise.
+
+### Section 4 – Penalties
+
+Each act will be considered for the time and fine imposed, which at minimum shall be 1 year and $100,000 dollars. A RICO charge on a business or individuals may cause the enterprise affected to be dissolved and seized.
+
+**Author:** Theodore Lars
+
+---
+
 ## STATUTE – Statute of Limitations (Updated)
 
 **STATUTE OF LIMITATIONS – 01/01/2026**

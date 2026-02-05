@@ -18,7 +18,8 @@ const filesToProcess = [
   'Radio_Codes.md',
   'US_Constitution.md',
   'Use_of_Force.md',
-  'Court_Procedures.md'
+  'Court_Procedures.md',
+  'templates.md'
 ];
 
 function processFiles() {

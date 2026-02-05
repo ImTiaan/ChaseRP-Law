@@ -7,14 +7,16 @@ import {
   parseCaseLaws, 
   parseNotices, 
   parseLegalDefinitions,
-  parseUSConstitution
+  parseUSConstitution,
+  parseTemplates
 } from '../../lib/parsers';
 import { 
   PenalCodeGrid, 
   CaseLawsGrid, 
   NoticesGrid, 
   LegalDefinitionsGrid,
-  USConstitutionGrid
+  USConstitutionGrid,
+  TemplatesGrid
 } from './CardViews';
 
 export default function DocViewer({ content, activeSection, matchingTitles }) {
@@ -43,6 +45,9 @@ export default function DocViewer({ content, activeSection, matchingTitles }) {
       case 'US_Constitution':
         items = parseUSConstitution(content.content);
         break;
+      case 'templates':
+        items = parseTemplates(content.content);
+        break;
       default:
         return null;
     }
@@ -69,6 +74,8 @@ export default function DocViewer({ content, activeSection, matchingTitles }) {
         return <LegalDefinitionsGrid items={items} activeSection={activeSection} />;
       case 'US_Constitution':
         return <USConstitutionGrid items={items.amendments} mainText={items.mainText} activeSection={activeSection} />;
+      case 'templates':
+        return <TemplatesGrid items={items} activeSection={activeSection} />;
       default:
         return null;
     }

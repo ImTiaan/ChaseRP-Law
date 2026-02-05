@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import remarkBreaks from 'remark-breaks';
-import { Banknote, Hourglass, Scale, Calendar, User, Book } from 'lucide-react';
+import { Banknote, Hourglass, Scale, Calendar, User, Book, Copy, Check } from 'lucide-react';
 
 const TypeBadge = ({ type }) => {
   let colorClass = 'bg-gray-600';
@@ -237,6 +237,80 @@ export const USConstitutionGrid = ({ items, mainText, activeSection }) => {
           );
         })}
       </div>
+    </div>
+  );
+};
+
+export const TemplatesGrid = ({ items, activeSection }) => {
+  const [copiedId, setCopiedId] = React.useState(null);
+
+  useEffect(() => {
+    if (activeSection) {
+      const element = document.getElementById(activeSection);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [activeSection]);
+
+  const handleCopy = (text, id) => {
+    navigator.clipboard.writeText(text);
+    setCopiedId(id);
+    setTimeout(() => setCopiedId(null), 2000);
+  };
+
+  return (
+    <div className="grid grid-cols-1 gap-6 p-4 max-w-4xl mx-auto">
+      {items.map((item, idx) => {
+        const cleanId = item.title.replace(/[*_`]/g, '');
+        const isActive = cleanId === activeSection;
+        return (
+          <div 
+            key={idx} 
+            id={cleanId}
+            className={`bg-zinc-900/80 border rounded-lg p-6 shadow-lg transition-all duration-300 ${
+              isActive 
+                ? 'border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)] scale-[1.02] z-10' 
+                : 'border-blue-500/30 hover:border-blue-500/50'
+            }`}
+          >
+            <div className="flex justify-between items-center mb-4 border-b border-white/10 pb-2">
+              <h3 className="text-xl font-bold text-white">{item.title}</h3>
+              <button 
+                onClick={() => handleCopy(item.templateCode, idx)}
+                className={`flex items-center gap-2 px-3 py-1 rounded text-sm font-bold transition-colors ${
+                  copiedId === idx 
+                    ? 'bg-emerald-600 text-white' 
+                    : 'bg-blue-600/20 text-blue-400 hover:bg-blue-600/40'
+                }`}
+              >
+                {copiedId === idx ? (
+                  <>
+                    <Check size={16} /> Copied!
+                  </>
+                ) : (
+                  <>
+                    <Copy size={16} /> Copy Template
+                  </>
+                )}
+              </button>
+            </div>
+            
+            {item.instructions && (
+              <div className="mb-4 text-gray-400 text-sm bg-white/5 p-3 rounded border-l-2 border-blue-500">
+                <h4 className="font-bold text-blue-400 mb-1 text-xs uppercase tracking-wider">Instructions</h4>
+                <Markdown remarkPlugins={[remarkGfm, remarkBreaks]}>{item.instructions}</Markdown>
+              </div>
+            )}
+
+            <div className="bg-black/50 p-4 rounded border border-white/10 font-mono text-sm text-gray-300 overflow-x-auto whitespace-pre">
+              {item.templateCode}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };
